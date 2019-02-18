@@ -1,9 +1,9 @@
 package sync
 
 import (
-	"testing"
-	"sync"
 	"fmt"
+	"sync"
+	"testing"
 )
 
 type operator struct {
@@ -36,3 +36,4 @@ func TestMutex(t *testing.T) {
 
 	wg.Wait()
 }
+
