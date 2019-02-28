@@ -22,6 +22,7 @@ func GetLockInstance() *sync.Mutex {
 }
 
 type HaitunReqLog struct {
+	Url      string
 	Param    string
 	CallTime time.Time
 }
@@ -56,6 +57,7 @@ func AddReqFreq(url, param string) {
 	defer GetLockInstance().Unlock()
 	haitunReqLogMap = GetInstance()
 	reqLog := new(HaitunReqLog)
+	reqLog.Url = url
 	reqLog.CallTime = time.Now()
 	reqLog.Param = param
 	haitunReqLogMap[url] = reqLog

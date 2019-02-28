@@ -3,6 +3,7 @@ package lang_feature
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
 type student struct {
@@ -34,4 +35,11 @@ func TestReferVal(t *testing.T) {
 	for k, v := range students {
 		fmt.Printf("key=%s,value=%v \n", k, v)
 	}
+}
+
+func TestTime(t *testing.T) {
+	mm, _ := time.ParseDuration("5m")
+	mm1 := time.Now().Add(mm)
+	fmt.Println(mm1)
+
 }
